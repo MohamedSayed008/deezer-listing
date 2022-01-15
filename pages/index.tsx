@@ -7,9 +7,9 @@ const HomePage = () => {
   return (
     <Page layout='OneColumn'>
       <Section slot='content'>
-          <Head>
-              <title>Deezer - Search</title>
-          </Head>
+        <Head>
+          <title>Deezer - Search</title>
+        </Head>
         <HomeScreen />
       </Section>
     </Page>
