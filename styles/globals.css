@@ -4,17 +4,10 @@
 @tailwind utilities;
 /*Tailwind*/
 @layer components {
-  .input-base {
-    @apply h-11 p-md border rounded-sm border-gray-300 shadow-sm hover:ring-1 hover:ring-gray-700  focus:outline-none focus:ring-2 focus:ring-primary;
-  }
-
   .btn-base {
     @apply flex justify-center items-center text-center	h-10 text-white px-md py-xs rounded font-bold text-sm shadow min-w-max hover:bg-black hover:bg-opacity-5 hover:opacity-40;
   }
 
-  .sticky-table-cell {
-    @apply sticky left-0 bg-white hover:bg-blue-50
-  }
 }
 
 
@@ -26,6 +19,7 @@ body {
   Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif,
   PoiretOne;
   background: #1C1C1C;
+  color: #FFF
 }
 
 a {
@@ -37,8 +31,3 @@ a {
   box-sizing: border-box;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}

@@ -3,17 +3,17 @@ import React from 'react';
 import { Page, Section } from 'reactjs-slot-layout/dist';
 import { HomeScreen } from '@screens/home/screen';
 
-const Home = () => {
+const HomePage = () => {
   return (
-    <Page layout='TwoColumnLeft'>
-      <Head>
-        <title>Deezer - Search</title>
-      </Head>
+    <Page layout='OneColumn'>
       <Section slot='content'>
+          <Head>
+              <title>Deezer - Search</title>
+          </Head>
         <HomeScreen />
       </Section>
     </Page>
   );
 };
 
-export default Home;
+export default HomePage;
