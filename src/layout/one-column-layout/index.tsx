@@ -16,7 +16,7 @@ export function OneColumnLayout({ sections }: any) {
 
       {/*Main slot*/}
       <Slot sections={sections} name='main-wrapper' component='<>'>
-        <div className='flex h-screen'>
+        <div className='flex items-start h-screen'>
           <Slot sections={sections} name='content' component='<>' />
         </div>
       </Slot>
