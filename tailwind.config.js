@@ -5,9 +5,18 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   plugins: [],
   theme: {
+    minWidth: {
+      18: '18rem',
+      0: '0px',
+      full: '100%',
+      min: 'min-content',
+      max: 'max-content',
+      fit: 'fit-content',
+    },
     colors: {
       primary: '#73FAFC',
       grayDark: '#1C1C1C',
+      grayDark2: '#222222',
       grayLight: '#232323',
       grayLighter: '#2A2A2A',
       black: colors.black,
@@ -41,7 +50,7 @@ module.exports = {
         inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
         side: '7px 2px 25px -12px rgb(0 0 0 / 75%)',
         none: 'none',
-      }
+      },
     },
   },
 };
