@@ -4,8 +4,7 @@ import { AlbumListReduxState } from '@redux/album-list/index';
 
 // payload
 export type SetAlbumListPayloadType = {
-  albums: any[] //@fixme: typescript
-
+  albums: any[]; //@fixme: typescript
 };
 // action type
 export type SetAlbumListActionType = PayloadAction<SetAlbumListPayloadType>;

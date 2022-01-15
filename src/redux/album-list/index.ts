@@ -2,11 +2,11 @@ import { setAlbumListReducer } from '@redux/album-list/set-album-list';
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface AlbumListReduxState {
-  albums: any[]
+  albums: any[];
 }
 
 export const initialAlbumsState: AlbumListReduxState = {
-  albums: []
+  albums: [],
 };
 
 export const AuthSlice = createSlice({
@@ -19,6 +19,5 @@ export const AuthSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { setAlbumListAction } = AuthSlice.actions;
-
 
 export default AuthSlice.reducer;

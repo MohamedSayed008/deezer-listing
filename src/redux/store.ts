@@ -5,7 +5,7 @@ import { Action, AnyAction } from 'redux';
 
 export const store = configureStore({
   reducer: appReducer,
-  devTools: process.env.NODE_ENV !== 'production'
+  devTools: process.env.NODE_ENV !== 'production',
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
