@@ -9,7 +9,7 @@
   }
 
   .input-base {
-    @apply h-11 p-md border rounded-sm bg-grayLight border-grayLight shadow-sm hover:ring-1 hover:ring-gray-700  focus:outline-none focus:ring-2 focus:ring-primary;
+    @apply h-11 p-lg border rounded-sm bg-grayLight border-grayLight shadow-sm hover:ring-1 hover:ring-gray-700  focus:outline-none focus:ring-2 focus:ring-primary;
   }
 
 }
