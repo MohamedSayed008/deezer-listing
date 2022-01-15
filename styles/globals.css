@@ -8,6 +8,10 @@
     @apply flex justify-center items-center text-center	h-10 text-black px-md py-xs rounded font-bold text-sm shadow min-w-max hover:bg-primary hover:bg-opacity-80;
   }
 
+  .input-base {
+    @apply h-11 p-md border rounded-sm bg-grayLight border-grayLight shadow-sm hover:ring-1 hover:ring-gray-700  focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
 }
 
 
