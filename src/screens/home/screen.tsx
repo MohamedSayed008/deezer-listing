@@ -21,7 +21,7 @@ export function HomeScreen() {
       <ScreenContainer className='flex flex-col p-xl justify-center items-center'>
         <div className='flex justify-center'>
           <div className='w-96 relative'>
-            <Input className='w-full' defaultValue={inputValue} onChange={debouncedInputChange} />
+            <Input className='w-full font-medium text-xl' defaultValue={inputValue} onChange={debouncedInputChange} />
             <Tooltip open={!!inputValue} className='mt-md w-full'>
               Content
             </Tooltip>

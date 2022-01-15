@@ -19,6 +19,7 @@ module.exports = {
       grayDark2: '#222222',
       grayLight: '#232323',
       grayLighter: '#2A2A2A',
+      textLight: '#878787',
       black: colors.black,
       purple: colors.violet,
       gray: colors.gray,
