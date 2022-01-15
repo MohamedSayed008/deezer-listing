@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "./server-dist",
+    "target": "esnext",
+    "isolatedModules": false,
+    "noEmit": false,
+    "incremental": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "suppressExcessPropertyErrors": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "baseUrl": "."
+  },
+  "exclude": [
+    "dist",
+    "server-dist",
+    "node_modules",
+    "prod_node_modules",
+    ".next",
+    "out",
+    "next.config.js",
+    "postcss.config.js"
+  ],
+  "include": ["server"]
+}

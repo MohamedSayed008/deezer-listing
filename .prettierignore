@@ -1,0 +1,11 @@
+server-dist
+dist
+.next
+.husky
+.prettierignore
+.eslintignore
+node_modules
+prod_node_modules
+yarn.lock
+public
+build

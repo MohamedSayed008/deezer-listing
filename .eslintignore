@@ -1,0 +1,11 @@
+dist
+node_modules
+prod_node_modules
+.scripts
+.vscode
+.next
+tailwind.config.js
+_intellij.js
+public
+server-dist
+build
