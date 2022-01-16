@@ -19,6 +19,18 @@
     focus:outline-none focus:ring-2 focus:ring-primary;
   }
 
+  .album-container {
+    @apply grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2  lg:gap-x-16 md:gap-x-12 sm:gap-x-8 gap-y-12 w-full
+  }
+
+  .accordion-content {
+    @apply overflow-hidden h-0 transition-height ease-in-out duration-300
+  }
+
+  .accordion-content[aria-expanded="true"] {
+    height: 450px;
+  }
+
 }
 
 

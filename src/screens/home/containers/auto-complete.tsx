@@ -5,17 +5,18 @@ import { BaseButton } from '@components/base-button/base-button';
 import React, { ChangeEvent, ForwardedRef, forwardRef, MouseEvent, useCallback, useRef, useState } from 'react';
 import debounce from 'lodash/debounce';
 import { useSearchArtistByName } from '@screens/home/hooks/use-search-artist-by-name';
+import { SelectedArtistData, useGetArtistAlbums } from '@screens/home/hooks/use-get-artist-albums';
 
 interface AutoCompleteInputProps extends InputProps {
-  absoluteValue: string;
+  selectedArtistName: string;
 }
 const AutoCompleteInput = forwardRef((props: AutoCompleteInputProps, ref: ForwardedRef<HTMLInputElement>) => {
-  const { absoluteValue, onChange, ...rest } = props;
+  const { selectedArtistName, onChange, ...rest } = props;
   const [inputValue, setInputValue] = useState('');
   return (
     <Input
       className='w-full text-xl font-semibold'
-      value={absoluteValue || inputValue}
+      value={selectedArtistName || inputValue}
       onChange={(e) => {
         onChange(e);
         setInputValue(e.target.value);
@@ -27,7 +28,6 @@ const AutoCompleteInput = forwardRef((props: AutoCompleteInputProps, ref: Forwar
 });
 AutoCompleteInput.displayName = 'AutoCompleteInput';
 
-type SelectedArtistData = { id?: string; name?: string };
 export function AutoComplete() {
   // Local State
   const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +37,8 @@ export function AutoComplete() {
   const inputRef = useRef<HTMLInputElement>(); //hint: if we want to apply album search based on query value
 
   // API Hooks
-  const [{ hookData: artistList = [] }, getArtistList] = useSearchArtistByName();
+  const [{ hookData: artistList = [], isLoading }, getArtistList] = useSearchArtistByName();
+  const [_, getArtistAlbums] = useGetArtistAlbums();
 
   // handlers
 
@@ -67,6 +68,8 @@ export function AutoComplete() {
     const artistName = targetElement.getAttribute('data-name');
     const artistId = targetElement.getAttribute('data-id');
 
+    if (!artistId) return;
+
     setSelectedArtist({ name: artistName, id: artistId });
     inputRef.current.focus();
     handleCloseDropDown();
@@ -78,7 +81,7 @@ export function AutoComplete() {
       onSubmit={(e) => {
         e.preventDefault();
         if (!selectedArtist.id) return;
-        console.log('submit', selectedArtist);
+        getArtistAlbums(selectedArtist);
       }}
     >
       <div className='w-1/2 min-w-60 relative'>
@@ -87,11 +90,14 @@ export function AutoComplete() {
             setSelectedArtist({});
             debouncedInputChange(e);
           }}
-          onFocus={handleOpenDropDown}
-          absoluteValue={selectedArtist['name']}
+          onClick={() => {
+            if (!artistList.length || isLoading) return;
+            handleOpenDropDown();
+          }}
+          selectedArtistName={selectedArtist['name']}
           ref={inputRef}
         />
-        <Tooltip open={isOpen && !!artistList.length} className='mt-md w-full text-textLight font-medium'>
+        <Tooltip open={isOpen} className='mt-md w-full text-textLight font-medium'>
           <div className='flex justify-between items-center'>
             <p>Search results</p>
             <span className='font-bold text-lg cursor-pointer' onClick={handleCloseDropDown}>
@@ -99,7 +105,12 @@ export function AutoComplete() {
             </span>
           </div>
 
-          <ArtistSearchResultList artists={artistList} onClose={handleCloseDropDown} onClick={handleSelectArtist} />
+          <ArtistSearchResultList
+            isLoading={isLoading}
+            artists={artistList}
+            onClose={handleCloseDropDown}
+            onClick={handleSelectArtist}
+          />
         </Tooltip>
       </div>
 
