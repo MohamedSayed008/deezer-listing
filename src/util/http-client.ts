@@ -1,7 +1,8 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
+export const DEEZER_BASE_URL = 'https://api.deezer.com/';
+
 const axiosClient = axios.create({
-  baseURL: 'https://api.deezer.com/',
   timeout: 10000,
   headers: {
     Accept: 'application/json',

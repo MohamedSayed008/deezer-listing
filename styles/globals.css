@@ -5,11 +5,18 @@
 /*Tailwind*/
 @layer components {
   .btn-base {
-    @apply flex justify-center items-center text-center	h-10 text-black px-md py-xs rounded font-bold text-sm shadow min-w-max hover:bg-primary hover:bg-opacity-80;
+    @apply flex justify-center items-center h-11 shadow min-w-max
+    uppercase text-center text-black  font-bold
+    px-md py-xs rounded-sm
+    hover:bg-primary hover:bg-opacity-80
+    disabled:bg-textLight disabled:cursor-not-allowed
   }
 
   .input-base {
-    @apply text-textLight h-11 px-lg py-md border rounded-sm bg-grayLight border-grayLight shadow-sm hover:ring-1 hover:ring-gray-700  focus:outline-none focus:ring-2 focus:ring-primary;
+    @apply text-textLight h-11 px-lg py-md
+    border rounded-sm border-grayLight bg-grayLight shadow-sm
+    hover:ring-1 hover:ring-gray-700
+    focus:outline-none focus:ring-2 focus:ring-primary;
   }
 
 }
