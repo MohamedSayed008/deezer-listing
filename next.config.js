@@ -7,6 +7,9 @@ module.exports = withFonts({
     API_ENDPOINT: process.env.API_ENDPOINT,
     NEXT_PUBLIC_URL: process.env.NEXT_PUBLIC_URL,
   },
+  images: {
+    domains: ['api.deezer.com', 'e-cdns-images.dzcdn.net'],
+  },
   webpack(config) {
     config.resolve.alias = {
       ...config.resolve.alias,
