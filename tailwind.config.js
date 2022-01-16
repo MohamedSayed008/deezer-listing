@@ -33,6 +33,15 @@ module.exports = {
       transparent: colors.transparent,
     },
     extend: {
+      transitionProperty: {
+        height: 'height',
+      },
+      height: {
+        lg: '450px',
+      },
+      maxHeight: {
+        md: '280px',
+      },
       spacing: {
         xs: '8px',
         sm: '12px',
