@@ -9,7 +9,7 @@ interface SkeletonLoaderProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivEl
 }
 
 export const SkeletonLoader = (props: SkeletonLoaderProps) => {
-  const { type = 'pulse', isText = false, className = '', height = 'h-6', width = 'w-full', ...rest } = props;
+  const { type = 'wave', isText = false, className = '', height = 'h-6', width = 'w-full', ...rest } = props;
 
   return (
     <div
