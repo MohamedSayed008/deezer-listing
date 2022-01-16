@@ -5,7 +5,7 @@ export interface ScreenContainerProps extends DetailedHTMLProps<HTMLAttributes<H
 export function ScreenContainer(props: ScreenContainerProps) {
   const { children, className = '', ...rest } = props;
   return (
-    <div className={`min-w-18 max-w-6xl mx-auto w-11/12 ${className}`} {...rest}>
+    <div className={`min-w-72 max-w-6xl mx-auto w-11/12 ${className}`} {...rest}>
       {children}
     </div>
   );

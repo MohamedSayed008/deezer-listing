@@ -6,8 +6,9 @@ module.exports = {
   plugins: [],
   theme: {
     minWidth: {
-      18: '18rem',
       0: '0px',
+      60: '15rem',
+      72: '18rem',
       full: '100%',
       min: 'min-content',
       max: 'max-content',
@@ -39,6 +40,8 @@ module.exports = {
         lg: '24px',
         'lg-alt': '32px',
         xl: '48px',
+        xxl: '64px',
+        xxxl: '96px',
       },
       boxShadow: {
         sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
