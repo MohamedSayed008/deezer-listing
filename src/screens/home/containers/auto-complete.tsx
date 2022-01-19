@@ -97,7 +97,7 @@ export function AutoComplete() {
           selectedArtistName={selectedArtist['name']}
           ref={inputRef}
         />
-        <Tooltip open={isOpen} className='mt-md w-full text-textLight font-medium'>
+        <Tooltip open={isOpen} className='mt-md w-full text-textLight font-medium z-10'>
           <div className='flex justify-between items-center'>
             <p>Search results</p>
             <span className='font-bold text-lg cursor-pointer' onClick={handleCloseDropDown}>
