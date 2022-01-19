@@ -1,7 +1,7 @@
 import { Table } from '@components/table/table';
 import React from 'react';
 import { useGetAlbumTracks } from '@screens/home/hooks/use-get-album-tracks';
-import { TrackListTableBodySekeleton } from '@screens/home/components/track-list-table-body-sekeleton';
+import { TrackListTableBodySkeleton } from '@screens/home/components/track-list-table-body-sekeleton';
 
 interface AlbumTrackListTableProps {
   releaseYear: number;
@@ -14,7 +14,7 @@ const TrackListTableBody = (props: AlbumTrackListTableProps) => {
   const [{ hookData: trackList = [], isLoading }] = useGetAlbumTracks(trackListApiUrl);
 
   if (isLoading) {
-    return <TrackListTableBodySekeleton />;
+    return <TrackListTableBodySkeleton />;
   }
   //todo: fix table on smaller screens
   //todo: fix UI shifting when table size changes
